@@ -1,0 +1,54 @@
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.header{
+     width:vh;
+     height: 100px;
+     background-color:  slategray;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 0;
+}
+
+.searchBar{
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.weatherData{
+    margin: 0;
+    height:calc(90vh);
+    background-color: darkslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.location{
+display: flex;
+justify-content: start;
+align-items: flex-start;
+}
+.city{
+    display: block;
+
+}
+
+.status{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#icon{
+    height: 80px;
+    width: 80px;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+
+    <script>
+      let seacrchQuery = "Learn JavaSript Functions Arrow IIFE";
+
+      let str = seacrchQuery;
+      let trim = str.trim();
+      console.log(trim);
+
+      let lo = trim.toLowerCase();
+      console.log(lo);
+
+      let up = trim.toUpperCase();
+      console.log(up);
+
+      let sub1 = trim.substring(6, 15);
+      console.log(sub1);
+
+      let sub2 = trim.slice(6, 15);
+      console.log(sub2);
+
+      let contains1 = trim.includes("functions");
+      if (contains1) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      let contains2 = trim.includes("arrow");
+      if (contains1) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      let contains3 = trim.includes("iife");
+      if (contains1) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      let ch6 = console.log(trim.charAt(6));
+      let c1 = console.log(trim.charCodeAt(0));
+
+      if (lo.includes("function") && up.includes("FUNCTION")) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+    </script>
+  </body>
+</html>
