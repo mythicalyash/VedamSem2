@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+header {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Demo Section */
+.demo-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grandparent {
+    background: #ffcdd2;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.grandparent:hover {
+    background: #ffb3ba;
+}
+
+.parent {
+    background: #bbdefb;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.parent:hover {
+    background: #90caf9;
+}
+
+.child {
+    background: #66bb6a;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.child:hover {
+    background: #4caf50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.child:active {
+    transform: translateY(0);
+}
+
+.label {
+    position: absolute;
+    top: 0.75rem;
+    left: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Log Section */
+.log-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.log-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#clearLog {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#clearLog:hover {
+    background: #d32f2f;
+}
+
+.event-log {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.log-entry {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: #f9f9f9;
+    border-left: 4px solid #2196f3;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    animation: slideIn 0.3s ease;
+}
+
+.log-entry.capturing {
+    border-left-color: #ff9800;
+    background: #fff3e0;
+}
+
+.log-entry.bubbling {
+    border-left-color: #4caf50;
+    background: #e8f5e9;
+}
+
+.log-entry strong {
+    color: #333;
+}
+
+.log-entry .phase {
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.log-entry .phase.capturing {
+    color: #ff9800;
+}
+
+.log-entry .phase.bubbling {
+    color: #4caf50;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    .demo-section,
+    .log-section {
+        padding: 1.5rem;
+    }
+}
