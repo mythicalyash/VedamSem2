@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React Click Game</title>
+    <style>
+      body {
+        margin: 0px;
+        height: 100vh;
+        display: flex;
+        background-color: #2d3436;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .game {
+        position: relative;
+        width: 400px;
+        height: 540px;
+        border: 5px double #333;
+        border-radius: 20px;
+        background: #d4af37;
+        overflow: hidden;
+      }
+
+      .box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 3px solid #333;
+        border-radius: 20px;
+        background: #778ba4;
+        cursor: crosshair;
+      }
+
+      .score {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootEle = document.querySelector("#root");
+
+      let point = 0;
+
+      function ClickGame() {
+        const handleClick = (e) => {
+          const box = e.target;
+          point++;
+
+          box.style.left =(Math.random() * 400) + "px";
+          box.style.top = (Math.random() * 540) + "px";
+
+
+          let po = document.querySelector("#point");
+          po.textContent = `Score:  ${point}`;
+
+        };
+        return (
+          <>
+            <h1>Click Game</h1>
+            <div className="game">
+              <div id="point" className="score">
+                Score: 0
+              </div>
+              <div
+                onClick={handleClick}
+                className="box"
+                style={{ left: "100px", top: "100px" }}
+              ></div>
+            </div>
+          </>
+        );
+      }
+
+      ReactDOM.render(<ClickGame />, rootEle);
+    </script>
+  </body>
+</html>
